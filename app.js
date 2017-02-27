@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 /*
- * To use sessions we need to require the following node package. 
+ * To use sessions we need to require the following node package.
  * See https://github.com/expressjs/session for more information
  */
 var session = require('express-session');
@@ -30,27 +30,27 @@ app.use(cookieParser());
  * Next we need to set up express-session. First we create a js object to
  * store all the setup options (read https://github.com/expressjs/session
  * for details).
- * 
+ *
  * cookie.maxAge is the number of milliSeconds in which the cookie should
  * expire after when the cookie is created. If you don't specify a value
  * then the cookie gets destroyed when the browser is shutdown.
- * 
+ *
  * secret is a string used to sign the cookie using HMAC read all
  * about it here https://en.wikipedia.org/wiki/Hash-based_message_authentication_code
- * 
+ *
  * resave determines whether the session object should be resaved back to
- * the "session store" even if the session wasn't modified during the request. 
+ * the "session store" even if the session wasn't modified during the request.
  * Session objects can be stored in what is know as a "session store". By default
  * this is simply computer memory but can be a database.
- * 
+ *
  * saveUninitialized, when true, causes a new but unmodified session object to be
  * saved to the session store. It is recommended that this is set to false.
- *   
+ *
  */
 
 var expressSessionOptions = {
   cookie : {
-      maxAge: 1000*60 
+      maxAge: 1000*60*2 
   },
   secret:'mySecret',
   resave: false,
