@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 });
 
-/* GET joke page. */
+/* GET jokes page. */
 router.get('/jokes', function(req, res, next) {
 
     if (!req.session.hasOwnProperty('jokes')) {
@@ -24,7 +24,7 @@ router.get('/jokes', function(req, res, next) {
 
 });
 
-/* POST joke page. */
+/* POST jokes page. */
 router.post('/jokes', function(req, res, next) {
 
     if (req.body.joke !== "" && req.body.joke.trim().length > 0) {
