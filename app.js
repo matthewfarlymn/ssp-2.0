@@ -49,13 +49,10 @@ app.use(cookieParser());
  */
 
 var expressSessionOptions = {
-  cookie : {
-      maxAge: 1000*60*2 
-  },
   secret:'mySecret',
   resave: false,
   saveUninitialized: false
-}
+};
 
 // Now set it up so that the session middleware is used on all requests
 app.use(session(expressSessionOptions));
