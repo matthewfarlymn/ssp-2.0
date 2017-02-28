@@ -3,9 +3,4 @@ extends layout
 block content
     div.container
         h1= title
-        form(method='POST' action='/jokes')
-            label(for='joke') Knock Knock...
-            textarea(name='joke')
-            button(type='submit') Submit
-        for joke in jokes
-            p= joke
+            a(href="./jokes") click here
