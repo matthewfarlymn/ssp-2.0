@@ -17,14 +17,11 @@ router.get('/', function(req, res, next) {
 
 router.post('/jokes', function(req, res, next) {
 
-    if (req.body.joke !== "") {
+    if (req.body.joke !== "" && req.body.joke.trim().length > 0) {
         req.session.jokes.push(req.body.joke.trim());
     }
 
-    res.render('jokes', {
-        title: 'Enter another joke',
-        jokes: req.session.jokes
-    });
+    res.redirect('/');
 
 });
 
